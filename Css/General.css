@@ -1,0 +1,931 @@
+/* Desktop - Forside */
+/* Menu layout */
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5em;
+  padding: 0.5em 1em 0 1em;
+}
+
+/* Navigation links */
+header ul {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  padding-top: 0.3em;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Link styling */
+li {
+  position: relative; /* nødvendig for dropdown */
+  padding: 0.5em;
+  margin: 0.5em;
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding: 0.5em 0.5em;
+  margin-left: 3em;
+}
+
+nav a:hover {
+  background-color: #c7b3a6;
+  border-radius: 5px;
+}
+
+/* Dropdown-menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 10;
+  min-width: 160px;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.5em 1em;
+  margin: 0;
+  white-space: nowrap;
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #c7b3a6;
+  border-radius: 0;
+}
+
+/* Vis dropdown ved hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+h1 {
+  font-family: "Puppies Play", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 4em;
+  margin-left: 10px;
+  margin-right: 5em;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  max-height: 500px;
+  object-fit: cover;
+}
+.forside {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+.forside img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.forside-tekst {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: white;
+  text-align: right;
+  font-weight: bold;
+}
+/* Fjerner margin og padding fra body og section */
+body,
+section {
+  margin: 0;
+  padding: 0;
+}
+.forside-slider {
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  margin: 0;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 2s ease-in-out, visibility 2s ease-in-out;
+  z-index: 0;
+}
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.slide img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+.forside-tekst {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: white;
+  text-align: right;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+.slide.active .forside-tekst {
+  opacity: 1;
+}
+h2,
+h3 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  margin: 0.5em;
+}
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.7em;
+}
+.kategori {
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  width: 200px;
+}
+.kategori img {
+  width: 500%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.design-kategorier img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.kategori img:hover {
+  transform: scale(1.03);
+}
+.kategori h3 {
+  margin-top: 0.5em;
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 1em;
+}
+.billede-række img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+.blok {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap; /* gør det mobilvenligt */
+}
+.blok .tekst {
+  flex: 1;
+  padding: 1em 2em;
+}
+.blok .tekst h2 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+}
+.blok .billede {
+  flex: 1;
+  max-width: 600px;
+  padding: 1em;
+  justify-content: flex-end;
+}
+.blok .billede img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.blok .billede img:hover {
+  transform: scale(1.03);
+}
+.cta-sektion {
+  text-align: center;
+  padding: 2em;
+}
+
+.cta-sektion h2 {
+  font-size: 2em;
+  font-family: "Shadows Into Light Two", cursive;
+  margin-bottom: 0.5em;
+}
+
+.cta-sektion h3 a {
+  font-size: 1em;
+  font-family: "Shadows Into Light Two", cursive;
+  text-decoration: none;
+  color: white;
+  background-color: #4f3c2e;
+  padding: 0.5em 1em;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.cta-sektion h3 a:hover {
+  background-color: #c7b3a6;
+}
+.billede img {
+  object-fit: cover;
+  display: block;
+}
+.tekst {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6em 2em 2em 2em;
+  text-align: center;
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 2em;
+  color: black;
+}
+.billede {
+  margin: 0;
+  padding: 0;
+}
+.billede img {
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.instagram-knap {
+  font-size: 1em;
+  font-family: "Shadows Into Light Two", cursive;
+  text-decoration: none;
+  color: white;
+  background-color: #4f3c2e;
+  padding: 0;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.instagram-knap:hover {
+  background-color: #c7b3a6;
+}
+
+.billed-galleri img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.footer {
+  padding: 10px 10px;
+  background-color: #ffffff;
+  border-top: 2px solid #000;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.logo {
+  font-family: "Shadows Into Light Two", cursive;
+  color: #4f3c2e;
+  margin: 0;
+  font-family: "Puppies Play", cursive;
+  font-weight: 500;
+  font-style: normal;
+  margin-right: 20px;
+  margin-top: -10px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+.social-links img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  margin-left: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.social-links img:hover {
+  transform: scale(1.1);
+}
+.right-logo img {
+  width: 20px;
+  height: auto;
+  margin-left: auto;
+}
+.extra-logo {
+  width: 60px;
+  height: auto;
+  margin-left: auto;
+  vertical-align: middle;
+  position: relative;
+  top: -80px;
+  margin-right: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Desktop - Forside  */
+
+/* Desktop - Opskrifter side 2 */
+
+.Overskrift1 {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+/* .farve1 {
+  background-color: rgb(217, 198, 176);
+} */
+.Overskrift1 h1 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 1.7em;
+  font-weight: 600; /* gør den tykkere */
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1em;
+  border-top: 1px solid #000;
+}
+.Overskrift1 p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding-top: 0.5em;
+  text-align: center;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.Overskrift2 h2 {
+  font-family: "Shadows Into Light Two", cursive;
+  font-size: 1.7em;
+  font-weight: 600; /* gør den tykkere */
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 1em;
+}
+.Overskrift2 p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding-top: 0.5em;
+  text-align: center;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.nybegynderopskrift {
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+.nybegynderopskrift img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.nybegynderopskrift img:hover {
+  transform: scale(1.03);
+}
+.nybegynderopskrift p {
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-family: "Shadows Into Light Two", cursive;
+  text-decoration: none;
+}
+.nybegynder-galleri {
+  font-weight: normal;
+}
+.nybegynder-galleri p {
+  font-size: 1.4em;
+}
+.erfarenopskrift {
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+}
+.erfarenopskrift img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.erfarenopskrift img:hover {
+  transform: scale(1.03);
+}
+.erfarenopskrift p {
+  margin-top: 0.5em;
+  font-size: 1em;
+  font-family: "Shadows Into Light Two", cursive;
+  text-decoration: none;
+}
+.erfaren-galleri p {
+  font-size: 1.4em;
+}
+.footer2 {
+  padding: 10px;
+  background-color: #ffffff;
+  border-top: 2px solid #000;
+  font-weight: 200;
+}
+/* Desktop - Opskrifter side 2 */
+
+/* Desktop - Nybegynder */
+.sophie-scarf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 2em;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+/* Venstre side med billeder */
+.sophiebilleder {
+  flex: 1;
+  min-width: 300px;
+}
+
+.stor-billede {
+  width: 100%;
+  height: 430px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.billede-galleri-sophie img {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Tekstblok */
+.Overskrift3 {
+  flex: 1;
+  min-width: 300px;
+  font-family: "Shadows Into Light Two", cursive;
+  padding: 1em;
+  background-color: #fdfaf7;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Overskrift3 h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #4f3c2e;
+  margin-left: 0.2em;
+}
+
+.Overskrift3 h3 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  color: #6b4f3b;
+}
+.Overskrift3 p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  color: #333;
+  white-space: pre-line;
+}
+.strikkeopskrift {
+  background-color: #fdfaf7;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+.strikkeopskrift h2 {
+  font-size: 28px;
+  color: #725040; /* mørkere brun */
+  margin-bottom: 30px;
+}
+
+.strikkeopskrift p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #3e2f1c;
+  max-width: 800px;
+  margin: 0 auto;
+  white-space: pre-line;
+}
+
+/* Desktop - Erfaren */
+.anemonesweater {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  padding: 2em;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+/* Venstre side med billeder */
+.anemonebilleder {
+  flex: 1;
+  min-width: 300px;
+}
+
+.stor-billede {
+  width: 100%;
+  height: 475px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.billede-galleri-anemone img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+/* Tekstblok */
+.Overskrift4 {
+  flex: 1;
+  min-width: 300px;
+  font-family: "Shadows Into Light Two", cursive;
+  padding: 1em;
+  background-color: #fdfaf7;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Overskrift4 h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #624d3e;
+  margin-left: 0.2em;
+}
+
+.Overskrift4 h3 {
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  color: #6b4f3b;
+}
+
+.Overskrift4 p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  white-space: pre-line;
+}
+.materialer-section {
+  padding: 3em 2em;
+  box-sizing: border-box;
+  background-color: #a79488;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+.materialer-tekst {
+  max-width: 600px;
+  margin-left: 2em; /* luft til venstre kant */
+  color: #ffffff;
+}
+
+.materialer-tekst h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+.materialer-tekst ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.materialer-tekst ul ul {
+  list-style-type: circle;
+  padding-left: 1.5em;
+  margin-top: 0.5em;
+}
+
+/* Desktop - Besøg */
+
+.garn-info {
+  font-size: 2em;
+  color: #624d3e;
+  background-color: #fdfaf7;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+.garn-info h2,
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-family: "Shadows Into Light Two", cursive;
+}
+.garn-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.farver-info {
+  font-size: 2em;
+  color: #4a4038;
+  background-color: #b1a394;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+.farver-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  font-family: "Shadows Into Light Two", cursive;
+}
+.farver-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.garn-række a {
+  display: block;
+}
+.garn-række img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-left: 1em;
+}
+.billede.garn {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Georgia", serif;
+}
+.garn-række img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+.garnbillede img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2em;
+}
+
+/* Besøg */
+
+.strikkecafe-layout {
+  font-size: 2em;
+  color: #4a4038;
+  background-color: #b1a394;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+  display: block; /* sørger for at tekst og billede ligger i blokke */
+}
+
+/* Tekstsektion */
+.strikkecafe-tekst {
+  color: #4a4038;
+  justify-content: center;
+}
+
+.strikkecafe-tekst h2 {
+  margin-top: 2em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-right: -3em;
+}
+
+.strikkecafe-tekst h3 {
+  margin-top: 2em;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-right: -3em;
+  padding-top: 2em;
+}
+
+.strikkecafe-tekst p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  margin-right: -3.7em;
+}
+
+.billede-cafe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2.5em;
+  margin-bottom: -5em;
+}
+
+.billede-cafe img {
+  width: 500px;
+  max-width: 400px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  margin: 2em auto;
+  margin-top: 6em;
+}
+
+/* Billeder til venstre */
+
+.kage-strik-billede {
+  margin-bottom: 2em;
+  margin-top: 0.7em;
+}
+/* Tekst til højre */
+.tekst-højre {
+  color: #624d3e;
+  font-size: 1.1em;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tekst-højre h3 {
+  margin-top: 5em;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.tekst-højre p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  .forside-tekst {
+    top: 30% !important; /* rykker teksten op på mobil */
+    transform: translateY(-20%) !important;
+    font-size: 2em !important;
+    text-align: center;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .blok {
+    flex-direction: column;
+    text-align: center;
+  }
+  .blok .tekst {
+    padding: 1em;
+    font-size: 1em;
+  }
+  .blok .tekst h2 {
+    font-size: 0.5em; /* mindre tekst på mobil */
+  }
+  .blok .billede {
+    padding: 1em;
+    display: flex;
+    justify-content: center; /* centrerer billedet på mobil */
+    /* margin-right: 0; fjerner højre-margin */
+  }
+  .blok .billede img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .forside-tekst {
+    font-size: 2em;
+    top: 45%;
+    right: 10%;
+    transform: translateY(-45%);
+    text-align: center;
+  }
+  .tekst {
+    font-size: 1em;
+    padding: 3em 1em 1em 1em;
+  }
+  .extra-logo img {
+    font-size: 0.2em;
+    padding-top: 1px;
+  }
+
+  .bund-sektion {
+    flex-direction: column;
+  }
+
+  .tekst-højre {
+    order: 1; /* tekst først */
+    text-align: center;
+    margin-top: 4em;
+  }
+
+  .billeder-venstre {
+    order: 2; /* billeder bagefter */
+    align-items: center;
+    margin-top: -5em;
+    margin-right: 5em;
+  }
+
+  .billeder-venstre img {
+    max-width: 330px;
+    height: 300px;
+  }
+}

@@ -1,0 +1,136 @@
+.design-kategorier {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 lige store kolonner */
+  gap: 2em;
+  padding: 2em;
+  justify-items: center;
+}
+
+.billede-række {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* to lige store kolonner */
+  width: 100vw; /* fylder hele skærmen */
+  margin: 0;
+  padding: 0;
+}
+.blok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+.image-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.nybegynder-galleri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+  gap: 2em;
+  padding: 2em;
+}
+.erfaren-galleri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolonner */
+  gap: 2em;
+  padding: 2em;
+}
+.billede-galleri-sophie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 billeder pr. række */
+  grid-template-rows: repeat(2, auto); /* 2 rækker */
+  gap: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.billede-galleri-anemone {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 billeder pr. række */
+  grid-template-rows: repeat(2, auto); /* 2 rækker */
+  gap: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+}
+.garn-række {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* besøg */
+.strikkecafe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  align-items: start;
+  width: 100%;
+}
+
+.bund-sektion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  align-items: start;
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+/* Billeder venstre */
+.billeder-venstre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding-top: 2em;
+  padding-right: 2em;
+  width: 100%; /* Fylder hele sin kolonne */
+}
+
+@media screen and (max-width: 769px) {
+  .design-kategorier {
+    display: block;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    justify-items: center;
+  }
+
+  .strikkecafe {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .strikkecafe-tekst {
+    padding-right: 2.3em;
+  }
+  .billeder-venstre {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+    gap: 2em;
+    /* justify-items: center; */
+    width: 500%;
+    height: 500%;
+    padding-top: 2em;
+    padding-right: 2em;
+  }
+  .bund-sektion {
+    display: block;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: start;
+    max-width: 1000px;
+    margin: 2em auto;
+  }
+}
